@@ -127,7 +127,7 @@ namespace LinkedLists
         /// if the item wasn't found in the list
         /// </summary>
         /// <param name="item">item to find</param>
-        public  LinkedListNode<T> Find(T item)
+        public LinkedListNode<T> Find(T item)
         {
             LinkedListNode<T> currentNode = head;
             while (currentNode != null &&
@@ -167,6 +167,47 @@ namespace LinkedLists
                 currentNode = currentNode.Next;
             }
             return builder.ToString();
+        }
+
+        public void LinkedListPrint() {
+
+            LinkedListNode<T> wezel = head;
+            if (wezel == null)
+            {
+                Console.WriteLine("LISTA JEST PUSTA");
+            }
+
+            else {
+
+                while (wezel!=null)
+                {
+                    Console.WriteLine("Wartość węzła jest: {0}", wezel.Value);
+                    // jeśli istnieje nastepnik to wypisz jego wartosc lub napisz ze jest null
+                    if (wezel.Next == null)
+                    {
+                        Console.WriteLine("Wartość Next jest: NULL");
+                    }
+                    else {
+
+                        Console.WriteLine("Wartość Next jest: {0}", wezel.Next.Value);
+                    }
+
+                    // jeśli istnieje poprzednik to wypisz jego wartosc lub napisz ze jest null
+
+                    if (wezel.Previous == null)
+                    {
+                        Console.WriteLine("Wartość Previous jest: NULL");
+                    }
+                    else
+                    {
+
+                        Console.WriteLine("Wartość Previous jest: {0}", wezel.Previous.Value);
+                    }
+
+                    Console.WriteLine();
+                    wezel = wezel.Next;
+                }
+            }
         }
 
         #endregion

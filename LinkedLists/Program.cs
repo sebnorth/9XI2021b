@@ -23,7 +23,10 @@ namespace LinkedLists
             UnsortedLinkedList<int> lista = new UnsortedLinkedList<int>();
             lista.Add(100);
             lista.Add(200);
-            Console.WriteLine(lista);
+            lista.Add(300);
+            // lista.Remove(200);
+            // Console.WriteLine(lista);
+            lista.LinkedListPrint();
 
             Console.ReadKey();
         }
